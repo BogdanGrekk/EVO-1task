@@ -1,0 +1,61 @@
+def direction(facing, turn):
+    if facing == "N":
+        facing = 0
+    elif facing == "NE":
+        facing = 45
+    elif facing == "E":
+        facing = 90
+    elif facing == "SE":
+        facing = 135
+    elif facing == "S":
+        facing = 180
+    elif facing == "SW":
+        facing = 225
+    elif facing == "W":
+        facing = 270
+    elif facing == "NW":
+        facing = 315                
+    else:
+        print("Wrong input")
+    if turn>1080 or turn<-1080 and turn % 45 !=0:
+        print("Wrong input")
+    else:
+        angle = int(facing) + int(turn);
+        if angle >= 0:
+            if angle % 360 == 0:
+                return("N")
+            elif angle % 360 == 45:
+                return("NE")
+            elif angle % 360 == 90:
+                return("E")
+            elif angle % 360 == 135:
+                return("SE")
+            elif angle % 360 == 180:
+                return("S")
+            elif angle % 360 == 225:
+                return("SW")
+            elif angle % 360 == 270:
+                return("W")
+            elif angle % 360 == 315:
+                return("NW")
+            else:
+                return("wrong turn")
+        elif angle < 0:
+            if angle % -360 == 0:
+                return("N")
+            elif angle % -360 == 45:
+                return("NE")
+            elif angle % -360 == -90:
+                return("E")
+            elif angle % -360 == -135:
+                return("SE")
+            elif angle % -360 == -180:
+                return("S")
+            elif angle % -360 == -225:
+                return("SW")
+            elif angle % -360 == -270:
+                return("W")
+            elif angle % -360 == -315:
+                return("NW")
+            else:
+                return("wrong turn")
